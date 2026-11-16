@@ -8,14 +8,16 @@ use App\Http\Controllers\PayrollController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\AuditController;
-use App\Http\Controllers\DemoAuthController;
+use App\Http\Controllers\AuthController;
 
-Route::get('/', [DemoAuthController::class, 'splash'])->name('splash');
-Route::get('/login', [DemoAuthController::class, 'loginForm'])->name('login');
-Route::post('/login', [DemoAuthController::class, 'login'])->name('login.submit');
-Route::post('/logout', [DemoAuthController::class, 'logout'])->name('logout');
+Route::get('/', fn () => view('welcome'))->name('splash');
+Route::middleware('guest')->group(function () {
+    Route::get('/login', [AuthController::class, 'loginForm'])->name('login');
+    Route::post('/login', [AuthController::class, 'login'])->middleware('throttle:login')->name('login.submit');
+});
+Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth')->name('logout');
 
-Route::middleware('demo.auth')->group(function () {
+Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 
     Route::get('/employees', [EmployeeController::class, 'index'])->name('employees.index');

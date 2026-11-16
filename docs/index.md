@@ -13,6 +13,7 @@ This project is a Laravel prototype for small-business employee records, attenda
 - [Local setup and development](local-development.md)
 - [Modules and sample data](mock-data.md)
 - [Demo sign-in](demo-login.md)
+- [Hosted Laravel deployment](hosted-deployment.md)
 - [GitHub Pages and deployment](github-pages.md)
 
 ## What the prototype includes

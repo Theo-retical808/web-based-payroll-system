@@ -1,6 +1,6 @@
 # Web-Based Employee Records, Attendance, and Payroll System
 
-A Laravel and Blade prototype for employee records, attendance tracking, and payroll management. The interface uses Tailwind CSS, Alpine.js, and Chart.js. Sample data is loaded from PHP files in `resources/data/`; the prototype does not require a database.
+A Laravel and Blade application for employee records, attendance tracking, and payroll review. The interface uses Tailwind CSS, Alpine.js, and Chart.js. The hosted edition stores user accounts in a database; payroll and attendance screens still use sample arrays and do not persist edits.
 
 ## Quick start
 
@@ -12,22 +12,19 @@ cp .env.example .env
 php artisan key:generate
 npm ci
 npm run build
+php -r "file_exists('database/database.sqlite') || touch('database/database.sqlite');"
+php artisan migrate
+php artisan db:seed --class=AdminUserSeeder
 php artisan serve
 ```
 
-Then open <http://127.0.0.1:8000>. On PowerShell, use `Copy-Item .env.example .env` for the environment-file step.
-
-The app uses file-based sessions and cache by default, so a database setup or migration is not needed for this prototype. Run `npm run dev` instead of `npm run build` while developing the frontend.
+Before running the seeder, set `ADMIN_USERNAME`, `ADMIN_EMAIL`, and a unique `ADMIN_PASSWORD` of at least 12 characters in `.env`. On PowerShell, use `Copy-Item .env.example .env` for the environment-file step. Then open <http://127.0.0.1:8000>. No default production password is included. Run `npm run dev` instead of `npm run build` while developing the frontend.
 
 ## Demo sign-in
 
-The demo credentials are:
+For the secure hosted edition, the administrator account is created from environment variables during deployment. For the database-free showcase branch, the demo credentials are `admin` / `pass123`.
 
-| Username | Password |
-| --- | --- |
-| `admin` | `pass123` |
-
-This fixed account is for local demonstrations only. Do not use it to protect a production deployment.
+The fixed account is only for the fictional-data showcase. Do not deploy it with real employee information.
 
 ## Included modules
 
@@ -39,11 +36,16 @@ This fixed account is for local demonstrations only. Do not use it to protect a 
 
 ## Sample data
 
-The mock data includes 15 employees, varied attendance activity for the latest 30 days, payroll records for each sample employee, user roles, audit entries, and attendance adjustments. Attendance dates are generated relative to the current date so the dashboard stays populated when opened later.
+The sample screens include 15 employees, varied attendance activity for the latest 30 days, payroll records for each sample employee, example user roles, audit entries, and attendance adjustments. Attendance dates are generated relative to the current date. In the secure hosted edition, only administrator accounts are currently database-backed; the operational payroll/attendance data and UI form changes are still illustrative and are not saved.
+
+## Editions
+
+- `deploy/secure-auth`: Laravel app with database-backed accounts, hashed passwords, login throttling, and an administrator provisioned from secrets.
+- `demo/static-data`: no-database Laravel showcase with fictional PHP-array data and the fixed demo login. It still needs PHP hosting; it is not a static HTML export and cannot run on GitHub Pages.
 
 ## Documentation and GitHub Pages
 
-Project documentation is in [`docs/`](docs/index.md). The [GitHub Pages guide](docs/github-pages.md) explains the publishing workflow and its scope. The workflow publishes the documentation site at <https://theo-retical808.github.io/web-based-payroll-system/>; GitHub Pages cannot run the Laravel/PHP application itself.
+Project documentation is in [`docs/`](docs/index.md). The [hosted deployment guide](docs/hosted-deployment.md) covers the PHP app branch. The [GitHub Pages guide](docs/github-pages.md) explains the documentation workflow. Pages publishes docs at <https://theo-retical808.github.io/web-based-payroll-system/>; it cannot run the Laravel/PHP application itself.
 
 ## Useful commands
 
