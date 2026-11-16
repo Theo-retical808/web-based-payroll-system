@@ -1,0 +1,11 @@
+title: Web-Based Payroll System
+description: Project guide for the employee records, attendance, and payroll prototype.
+url: https://theo-retical808.github.io
+baseurl: /web-based-payroll-system
+theme: minima
+markdown: kramdown
+plugins:
+  - jekyll-relative-links
+relative_links:
+  enabled: true
+  collections: true

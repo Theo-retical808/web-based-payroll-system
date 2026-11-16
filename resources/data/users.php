@@ -1,0 +1,58 @@
+<?php
+
+return [
+    [
+        'id'         => 1,
+        'name'       => 'Admin User',
+        'email'      => 'admin@example.com',
+        'role'       => 'System Administrator',
+        'business'   => null,
+        'status'     => 'Active',
+        'created_at' => '2024-01-10',
+    ],
+    [
+        'id'         => 2,
+        'name'       => 'Gloria Palma',
+        'email'      => 'gloria@business.com',
+        'role'       => 'Business Owner',
+        'business'   => 'Palma General Store',
+        'status'     => 'Active',
+        'created_at' => '2024-01-15',
+    ],
+    [
+        'id'         => 3,
+        'name'       => 'Jose Reyes',
+        'email'      => 'jose.reyes@business.com',
+        'role'       => 'HR/Manager',
+        'business'   => 'Palma General Store',
+        'status'     => 'Active',
+        'created_at' => '2024-02-01',
+    ],
+    [
+        'id'         => 4,
+        'name'       => 'Cita Villanueva',
+        'email'      => 'cita.villanueva@business.com',
+        'role'       => 'Payroll Officer',
+        'business'   => 'Palma General Store',
+        'status'     => 'Active',
+        'created_at' => '2024-02-01',
+    ],
+    [
+        'id'         => 5,
+        'name'       => 'Maria Santos',
+        'email'      => 'maria.santos@employee.com',
+        'role'       => 'Employee',
+        'business'   => 'Palma General Store',
+        'status'     => 'Active',
+        'created_at' => '2024-03-15',
+    ],
+    [
+        'id'         => 6,
+        'name'       => 'Ben Lim',
+        'email'      => 'ben.lim@employee.com',
+        'role'       => 'Employee',
+        'business'   => 'Palma General Store',
+        'status'     => 'Inactive',
+        'created_at' => '2024-04-01',
+    ],
+];
