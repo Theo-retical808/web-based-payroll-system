@@ -55,3 +55,8 @@ npm run dev
 ```
 
 For architecture, data structures, and setup details, start at the [documentation home](docs/index.md).
+
+## Branch editions
+
+- [`deploy/secure-auth`](https://github.com/Theo-retical808/web-based-payroll-system/tree/deploy/secure-auth): database-backed accounts and deployment instructions. Payroll and attendance still use sample data, so this is not ready for real payroll records.
+- [`demo/static-data`](https://github.com/Theo-retical808/web-based-payroll-system/tree/demo/static-data): the original no-database Laravel showcase using fictional PHP-array data and public demo credentials. It requires PHP hosting; it is not a static HTML export.
