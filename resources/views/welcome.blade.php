@@ -24,7 +24,7 @@
             <h1 class="mt-6 text-4xl font-bold leading-tight tracking-tight text-[#0b1f33] sm:text-5xl lg:text-6xl">A simpler way to care for your team and payroll.</h1>
             <p class="mt-5 max-w-xl text-lg leading-8 text-slate-600">Keep employee records, attendance, and pay periods together in one calm, easy-to-explore workspace.</p>
             <div class="mt-8 flex flex-wrap gap-3"><a href="{{ route('login') }}" class="inline-flex items-center gap-2 rounded-xl bg-teal-700 px-6 py-3.5 text-sm font-semibold text-white shadow-sm transition hover:bg-teal-800 focus:outline-none focus:ring-4 focus:ring-teal-200">Go to your workspace <span aria-hidden="true">→</span></a><a href="#modules" class="rounded-xl border border-slate-300 bg-white px-6 py-3.5 text-sm font-semibold text-[#0b1f33] transition hover:border-teal-600 hover:bg-teal-50">Explore features</a></div>
-            <p class="mt-5 text-sm text-slate-600">Demo sign-in: <span class="font-semibold text-[#0b1f33]">admin</span> / <span class="font-semibold text-[#0b1f33]">pass123</span></p>
+            <p class="mt-5 text-sm text-slate-600">Sign in with an account provisioned by your administrator.</p>
         </section>
 
         <section aria-label="People and payroll dashboard preview" class="relative">

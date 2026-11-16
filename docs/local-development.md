@@ -26,7 +26,9 @@ php artisan serve
 
 On PowerShell, replace the copy command with `Copy-Item .env.example .env`. Then visit <http://127.0.0.1:8000>.
 
-The prototype uses file-based sessions and cache. It reads application examples from `resources/data/`, so local setup does not require a database or `php artisan migrate`.
+The `deploy/secure-auth` edition requires a database for user accounts. For SQLite, create `database/database.sqlite` before running `php artisan migrate` (the README includes a cross-platform PHP command for this). Set `ADMIN_USERNAME`, `ADMIN_EMAIL`, and a unique `ADMIN_PASSWORD` of at least 12 characters in `.env`, then create the first administrator with `php artisan db:seed --class=AdminUserSeeder`.
+
+The payroll, attendance, and audit examples still come from PHP arrays in `resources/data/`; their changes are not persisted yet. The `demo/static-data` branch omits the account database and uses the public demo login.
 
 ## Frontend development
 

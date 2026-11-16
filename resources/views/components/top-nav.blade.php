@@ -80,11 +80,11 @@
                 aria-label="User menu"
             >
                 <div class="w-7 h-7 bg-teal-700 rounded-full flex items-center justify-center">
-                    <span class="text-xs font-semibold text-white">AU</span>
+                    <span class="text-xs font-semibold text-white">{{ strtoupper(substr(auth()->user()->name, 0, 2)) }}</span>
                 </div>
                 <div class="hidden sm:block text-left">
-                    <p class="text-sm font-semibold text-gray-900 leading-tight">Admin User</p>
-                    <p class="text-sm text-gray-700 leading-tight">System Administrator</p>
+                    <p class="text-sm font-semibold text-gray-900 leading-tight">{{ auth()->user()->name }}</p>
+                    <p class="text-sm text-gray-700 leading-tight">{{ auth()->user()->role }}</p>
                 </div>
                 <svg class="w-4 h-4 text-gray-600 hidden sm:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>

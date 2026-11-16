@@ -7,7 +7,7 @@ title: GitHub Pages
 
 ## What Pages publishes
 
-The workflow in `.github/workflows/pages.yml` builds and publishes this `docs/` directory as a Jekyll documentation site. It runs on pushes to `main` that change documentation or the workflow file, and can also be started manually from GitHub Actions.
+The workflow in `.github/workflows/pages.yml` builds and publishes this `docs/` directory as a Jekyll documentation site. It runs on pushes to `main` and can also be started manually from GitHub Actions.
 
 Expected site URL: <https://theo-retical808.github.io/web-based-payroll-system/>.
 
@@ -15,7 +15,7 @@ The workflow uses GitHub's Pages build and deploy actions. `configure-pages` is 
 
 ## Laravel hosting
 
-GitHub Pages serves static files and cannot run PHP, Laravel routes, sessions, or the interactive payroll application. It therefore hosts this documentation site only. To make the application available on the internet, deploy the Laravel project to a PHP-capable web host and configure a secure production environment separately.
+GitHub Pages serves static files and cannot run PHP, Laravel routes, sessions, or the interactive payroll application. It therefore hosts this documentation site only. The `demo/static-data` edition still needs PHP hosting even though its business records are static PHP arrays. The `deploy/secure-auth` edition also needs PHP hosting and a database for user accounts. The operational payroll records in either edition remain prototype data and must not be used for real payroll.
 
 ## Workflow outline
 

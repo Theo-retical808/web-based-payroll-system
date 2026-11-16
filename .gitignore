@@ -19,9 +19,6 @@
 /public/build
 /public/hot
 /public/storage
-/database/migrations/
-/database/factories/
-/database/seeders/
 /storage/*.key
 /storage/pail
 /docs/_site/

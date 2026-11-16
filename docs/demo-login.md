@@ -5,13 +5,16 @@ title: Demo sign-in
 
 # Demo sign-in
 
-Open the splash page and choose **Sign in**. The local demo account is:
+Open the splash page and choose **Sign in**.
 
-| Field | Value |
+On the `deploy/secure-auth` branch, enter the username and password provisioned for the administrator. To create the first account, set these server environment values before running `php artisan db:seed --class=AdminUserSeeder`:
+
+| Environment key | Purpose |
 | --- | --- |
-| Username | `admin` |
-| Password | `pass123` |
+| `ADMIN_USERNAME` | Initial administrator username |
+| `ADMIN_EMAIL` | Initial administrator email |
+| `ADMIN_PASSWORD` | Initial password (minimum 12 characters) |
 
-Successful login starts a Laravel session and redirects to the dashboard. The user menu's **Sign Out** action clears that session. Unauthenticated workspace routes redirect to the login page.
+The seeder stores a password hash and will not overwrite an existing account. Login uses Laravel's session guard, regenerates the session ID on success, and is throttled to five attempts per minute per username/IP. Signing out invalidates the session. Unauthenticated workspace routes redirect to sign-in.
 
-These credentials are intentionally fixed for a local classroom/demo prototype. They are visible in source and documentation and must not be treated as secure production credentials.
+The `demo/static-data` branch intentionally retains the public `admin` / `pass123` showcase login. It contains fictional sample records only and must never be used for real payroll data.
