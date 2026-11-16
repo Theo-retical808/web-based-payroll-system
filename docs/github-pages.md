@@ -7,7 +7,7 @@ title: GitHub Pages
 
 ## What Pages publishes
 
-The workflow in `.github/workflows/pages.yml` builds and publishes this `docs/` directory as a Jekyll documentation site. It runs on pushes to `main` that change documentation or the workflow file, and can also be started manually from GitHub Actions.
+The workflow in `.github/workflows/pages.yml` builds and publishes this `docs/` directory as a Jekyll documentation site. It runs on pushes to `main` and can also be started manually from GitHub Actions.
 
 Expected site URL: <https://theo-retical808.github.io/web-based-payroll-system/>.
 
